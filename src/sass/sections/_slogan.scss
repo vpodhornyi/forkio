@@ -1,0 +1,124 @@
+.container_slogan {
+  padding-top: 120px;
+}
+
+
+.slogan {
+  margin-bottom: 98px;
+  text-align: center;
+  @include respond-to(small) {
+    margin-bottom: 78px;
+  }
+  @include respond-to(medium) {
+    margin-bottom: 98px;
+  }
+  @include respond-to(large) {
+    margin-bottom: 70px;
+  }
+  &__section {
+    width: 265px;
+    margin: 0 auto;
+    @include respond-to(small) {
+      width: 453px;
+    }
+    @include respond-to(medium) {
+      width: 665px;
+    }
+    @include respond-to(large) {
+      width: 911px;
+    }
+    &-title {
+      font-family: "Montserrat", sans-serif;
+      color: $smoky;
+      font-size: 1.856rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 40px;
+      text-transform: uppercase;
+      @include respond-to(small) {
+        font-size: 3rem;
+        line-height: 45px;
+        margin-bottom: 54px;
+      }
+      @include respond-to(medium) {
+        margin-bottom: 38px;
+      }
+      @include respond-to(large) {
+        font-size: 3.858rem;
+      }
+    }
+    &-text {
+      font-family: "Lato", sans-serif;
+      color: $nightRider;
+      font-size: 1rem;
+      line-height: 20px;
+      margin-bottom: 35px;
+      @include respond-to(small) {
+        font-size: 1.143rem;
+        line-height: 25px;
+        margin-bottom: 38px;
+      }
+      @include respond-to(medium) {
+        font-size: 1.501rem;
+        line-height: 28px;
+        margin-bottom: 36px;
+      }
+      @include respond-to(large) {
+        font-size: 1.501rem;
+      }
+    }
+    &-actions-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      &-item {
+        margin-top: 20px;
+        margin-right: 5px;
+        @include respond-to(small) {
+          margin-top: 0;
+        }
+        &-btn {
+          font-size: 0.857rem;;
+          line-height: 20px;
+          font-weight: 700;
+          padding: 3px 10px;
+          text-decoration: none;
+          color: $blueCharcoal;
+          border: 1px solid rgba(27,31,35,.2);
+          cursor: pointer;
+          font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+          &-octicon {
+            display: inline-block;
+            vertical-align: text-top;
+          }
+        }
+      }
+    }
+  }
+}
+.octicon-btn {
+    background-color: $aliceBlue;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+  &:hover {
+    animation-delay: .4s;
+    animation-duration: .1s;
+    animation-fill-mode: forwards;
+    animation-name: tooltip-appear;
+    animation-timing-function: ease-in;
+    background-color: #e6ebf1;
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    background-position: -.5em;
+    border-color: rgba(27,31,35,.35);
+  }
+}
+.views-btn {
+  background-color: $white;
+  border-left: 0;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  &:hover {
+    color: #0366d6;
+  }
+}

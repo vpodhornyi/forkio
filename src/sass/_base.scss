@@ -1,0 +1,47 @@
+
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 320px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include respond-to(small) {
+    width: 100%;
+  }
+
+  @include respond-to(medium) {
+    width: 100%;
+  }
+
+  @include respond-to(large) {
+    width: 100%;
+  }
+}
+
+.brand-logo {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  &__img {
+    height: 43px;
+    width: 44px;
+    background: url(../img/sprite-logo.png)  no-repeat -5px -4px;
+  }
+
+  &__name {
+    text-transform: uppercase;
+    font-size: 1.71rem;
+  }
+}
+
+.navigation-menu {
+  display: flex;
+}

@@ -1,0 +1,119 @@
+.container_feedback {
+  font-family: "Montserrat", sans-serif;
+  padding-top: 60px;
+  padding-bottom: 70px;
+
+  @include respond-to(small) {
+    padding-top: 115px;
+    padding-bottom: 60px;
+  }
+
+  @include respond-to(medium) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include respond-to(large) {
+    padding-top: 85px;
+    padding-bottom: 80px;
+  }
+}
+
+.feedback {
+  font-family: "Montserrat", sans-serif;
+
+  &__social {
+    &-nets {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include respond-to(medium){
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    &-info {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    &-btn-box {
+      margin-top: 30px;
+    }
+
+    &-btn {
+      display: inline-block;
+      font-size: 1.5rem;
+      width: 280px;
+      border-radius: 5px;
+      padding: 17px 0;
+      text-align: center;
+      box-sizing: border-box;
+      position: relative;
+
+      @include respond-to(medium) {
+        width: 240px;
+        margin-right: 40px;
+
+        & div:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &_github {
+        color: $nightRider;
+        background-color: $whiteSmoke;
+      }
+
+      &_github:hover {
+        color: $white;
+        background-color: $hippieBlue;
+      }
+
+      &_github:before {
+        content: "\f09b";
+        position: absolute;
+        left: 25px;
+      }
+
+      &_twitter {
+        color: $white;
+        background-color: $summerSky;
+        border: 1px solid $summerSky;
+        padding: 16px 0;
+      }
+
+      &_twitter:hover {
+        color: $summerSky;
+        background-color: $white;
+      }
+
+      &_twitter:before {
+        content: "\f099";
+        position: absolute;
+        left: 25px;
+      }
+
+      &_facebook {
+        color: #fff;
+        background-color: $mariner;
+        border: 1px solid $mariner;
+        padding: 16px 0;
+      }
+
+      &_facebook:hover {
+        color: $mariner;
+        background-color: $white;
+      }
+
+      &_facebook:before {
+        content: "\f39e";
+        position: absolute;
+        left: 25px;
+      }
+    }
+  }
+}

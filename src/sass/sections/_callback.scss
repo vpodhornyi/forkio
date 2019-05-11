@@ -1,0 +1,118 @@
+.container_callback {
+  padding-top: 30px;
+  padding-bottom: 40px;
+
+  @include respond-to(small) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include respond-to(large) {
+    @include flexContentSpaceBetween();
+  }
+}
+
+.title {
+  text-align: center;
+
+  &_callback {
+    font-size: 1.71rem;
+    font-weight: $font-weight-bold;
+    color: $smoky;
+    padding: 0 40px;
+    margin-bottom: 40px;
+
+    @include respond-to(small) {
+      font-size: 2rem;
+      margin-bottom: 45px;
+    }
+
+    @include respond-to(medium) {
+      font-size: 2.14rem;
+      margin-bottom: 45px;
+      padding: 0;
+    }
+
+    @include respond-to(large) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.callback {
+  background-color: $whiteSmoke;
+
+  &-form {
+    @include flexColumnCenter();
+
+    @include respond-to(medium) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    @include respond-to(large) {
+      width: 850px;
+    }
+
+    &__item {
+      border: none;
+      box-sizing: border-box;
+
+      &_input {
+        @include callbackData(1rem, 15px, 26px, 44px, 290px);
+        margin-bottom: 20px;
+
+        @include respond-to(medium) {
+          width: calc(50% - 20px);
+
+          &-name {
+            margin-right: 20px;
+          }
+
+          &-phone {
+            margin-left: 20px;
+          }
+        }
+
+        @include respond-to(large) {
+
+          & {
+            width: 335px;
+            margin-bottom: 0;
+          }
+
+          &-phone {
+            margin-left: 0;
+            margin-right: 19px;
+          }
+        }
+      }
+
+      &_input::placeholder {
+        color: $linkWater;
+      }
+
+      &_btn-rounded {
+        cursor: pointer;
+        text-transform: uppercase;
+        @include btnRounded(0.92rem, 14px, 32px, 43px, $deluge);
+      }
+
+      &_btn-rounded:hover {
+        background-color: $white;
+        color: $deluge;
+      }
+    }
+
+    &__item:focus {
+      outline: none;
+    }
+  }
+}
+
+
+
+
+
+

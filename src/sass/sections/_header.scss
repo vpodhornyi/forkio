@@ -1,0 +1,616 @@
+.container_navigation {
+  @include flexContentSpaceBetween();
+  padding-top: 30px;
+  padding-bottom: 30px;
+  overflow: hidden;
+  z-index: 2;
+
+  @include respond-to(medium) {
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  @include respond-to(large) {
+    padding-bottom: 30px;
+
+    & a:nth-child(3) {
+      order: 3
+    }
+  }
+}
+
+.brand-logo {
+
+  &:hover &__img_header {
+    background-position: -58px -4px;
+  }
+
+  &__name_header {
+    display: none;
+    color: $deluge;
+    font-weight: $font-weight-bold;
+    margin-left: 15px;
+    font-size: 1.71rem;
+
+    @include respond-to(small) {
+      display: block;
+    }
+  }
+
+  &:hover &__name_header {
+    color: $white;
+  }
+
+}
+
+.navigation-menu {
+
+  &_header {
+    position: absolute;
+    top: -442px;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+
+    @include respond-to(medium) {
+      padding-top: 20px;
+      order: 3;
+      flex-basis: 80%;
+      position: static;
+      z-index: auto;
+      flex-direction: row;
+      margin: 0 auto;
+      @include flexContentSpaceBetween();
+    }
+
+    @include respond-to(large) {
+      padding-top: 0;
+      order: 2;
+      flex-basis: 560px;
+      margin-left: auto;
+      margin-right: 50px;
+    }
+
+    & a:last-child {
+      @include respond-to(medium) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__item {
+    color: $white;
+    padding: 25px 0 25px 13px;
+    background-color: $nightRider;
+    box-sizing: border-box;
+    border-bottom: 1px solid $eclipse;
+    font-size: 2rem;
+
+    @include respond-to(medium) {
+      padding: 0;
+      font-size: 1.14rem;
+      font-weight: $font-weight-bold;
+      color: $deluge;
+      background-color: $nero;
+      border: none;
+    }
+
+  }
+
+  &__item:hover {
+    color: $deluge;
+
+    @include respond-to(medium) {
+      color: $white;
+    }
+  }
+
+  @keyframes menu-show {
+    from {
+      top: -442px;
+    }
+    to {
+      top: 102px;
+    }
+  }
+
+  @keyframes menu-hide {
+    from {
+      top: 102px;
+    }
+    to {
+      top: -442px;
+    }
+  }
+
+  &_show {
+    animation-name: menu-show;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+  }
+
+  &_hide {
+    animation-name: menu-hide;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.header {
+  background: url("../img/header/header-background.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  padding-top: 145px;
+  padding-bottom: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond-to(small) {
+    padding-top: 180px;
+    padding-bottom: 470px;
+  }
+
+  &__navigation {
+    background-color: $nero;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__brand {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: -2;
+
+    &-name {
+      color: $white;
+      font-size: 3.42rem;
+      font-weight: $font-weight-bold;
+      margin-bottom: 20px;
+    }
+
+    &-slogan {
+      color: $deluge;
+      font-size: 1.28rem;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+      line-height: 34px;
+    }
+
+    &-version {
+      color: $pattensBlue;
+      text-transform: uppercase;
+    }
+  }
+
+  &__trial-period {
+    color: $pattensBlue;
+    position: absolute;
+    bottom: -50px;
+  }
+}
+
+.btn-mobile-menu {
+  width: 27px;
+  height: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.4s ease-out;
+
+  @include respond-to(medium) {
+    display: none;
+  }
+
+  &_open {
+    transform: rotate(-45deg);
+    height: 27px;
+
+    & .btn-mobile-menu__line_start {
+      width: 50%;
+      align-self: flex-start;
+      transform: rotate(-90deg) translateX(1px);
+    }
+
+    & .btn-mobile-menu__line_end {
+      width: 50%;
+      align-self: flex-end;
+      transform: rotate(-90deg) translateX(-1px);
+    }
+  }
+
+  &__line {
+    background-color: #e6e4e4;
+    border-radius: 5px;
+    width: 100%;
+    height: 3px;
+
+    &_start {
+      width: 80%;
+      align-self: flex-end;
+      transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+      transform-origin: right;
+    }
+
+    &_end {
+      align-self: flex-end;
+      transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+      transform-origin: left;
+    }
+  }
+}
+
+/*.header {
+  background: url("../img/header/header-background.jpg") no-repeat center center;
+  background-size: cover;
+  height: 718px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  margin-bottom: 121px;
+  @include respond-to(small) {
+    margin-bottom: 135px;
+    height: 834px;
+  }
+  @include respond-to(medium) {
+    margin-bottom: 156px;
+    height: 800px;
+  }
+  @include respond-to(large) {
+    margin-bottom: 129px;
+  }
+  &__navigation {
+    width: 100%;
+    height: 103px;
+    background-color: $nero;
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include respond-to(medium) {
+      height: 118px;
+    }
+    @include respond-to(large) {
+      height: 100px;
+    }
+  }
+  &__nav-bar {
+    width: 289px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    @include respond-to(small) {
+      width: 428px;
+    }
+    @include respond-to(medium) {
+      width: 728px;
+    }
+    @include respond-to(large) {
+      width: 100%;
+    }
+    &-logo {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+      &-img {
+        width: 43px;
+        height: 41px;
+        background: url('../img/header/header-logo-sprite.png') -10px -10px;
+      }
+      &:hover &-img {
+        background: url('../img/header/header-logo-sprite.png') -73px -10px;
+      }
+      &-text {
+        display: none;
+        font-family: "Lato", sans-serif;
+        color: $deluge;
+        font-size: 1.714rem;
+        font-weight: 700;
+        padding-left: 13px;
+        text-transform: uppercase;
+        @include respond-to(small) {
+          display: inherit;
+        }
+        @include respond-to(medium) {
+          padding-left: 17px;
+          order: 1;
+        }
+      }
+      &:hover &-text {
+        color: $white;
+      }
+    }
+  }
+}
+.header__nav-bar-nav {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: -464px;
+  width: 100%;
+  @include respond-to(medium) {
+    position: initial;
+    display: inherit;
+    width: auto;
+    justify-content: center;
+    flex-basis: 100%;
+    order: 3;
+    margin-top: 20px;
+  }
+  @include respond-to(large) {
+    order: 2;
+    flex-basis: auto;
+    margin-top: 0;
+    margin-left: auto;
+  }
+  &-list {
+    @include respond-to(medium) {
+      display: flex;
+      width: 510px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include respond-to(large) {
+      width: 613px;
+      justify-content: space-evenly;
+    }
+    &-item {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.286rem;
+      padding: 41px 33px;
+      background-color: #303030;
+      border-bottom: 2px solid #383838;
+      text-align: left;
+      position: relative;
+      box-sizing: border-box;
+      text-decoration: none;
+      &:last-child::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 6px;
+        bottom: -8px;
+        background-color: #303030;
+        left: 0;
+      }
+      &:hover::before {
+        content: "";
+        position: absolute;
+        height: 50%;
+        width: 4px;
+        background-color: #8d81ac;
+        left: 0;
+        top: 25%;
+        @include respond-to(medium) {
+          position: initial;
+        }
+      }
+      @include respond-to(medium) {
+        padding: 0;
+        border: none;
+        background-color: $nero;
+        font-size:  1.143rem;
+        font-weight: 700;
+      }
+      &:last-child::after {
+        @include respond-to(medium) {
+          position: initial;
+        }
+      }
+      &-link {
+        text-decoration: none;
+        color: $white;
+        @include respond-to(medium) {
+          color: $deluge;
+        }
+        &:hover {
+          color: #8d81ac;
+          @include respond-to(medium) {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+.header__nav-bar-nav.display {
+  display: initial;
+  animation-duration: 0.5s;
+  animation-name: move;
+  @keyframes move {
+    from {left: -500px}
+    to {
+      left: 0;
+    }
+  }
+}
+//BUTTONS
+.btn {
+  border-radius: 35px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-violet {
+  background-color: #8e82ad;
+  border: 1px solid #8e82ad;
+  font-family: "Montserrat", sans-serif;
+  color: $white;
+  font-weight: 700;
+  &:hover {
+      color: $deluge;
+      background-color: $white;
+      border: 1px solid $deluge;
+  }
+}
+.header__btn {
+  font-size: 1.071rem;
+  padding: 12px 24px;
+  @include respond-to(small) {
+    font-size: 1.214rem;
+    padding: 15px 25px;
+  }
+  @include respond-to(medium) {
+    order: 2;
+    font-size: 1.143rem;
+    padding: 12px 35px;
+  }
+  @include respond-to(large) {
+    order: 3;
+  }
+}
+.header__btn-download {
+  padding: 15px 31px;
+  font-size:  1.286rem;
+  position: absolute;
+  width: 292px;
+  box-sizing: border-box;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include respond-to(small) {
+    padding: 23px 62px;
+    font-size:  1.501rem;
+    width: 392px;
+  }
+}
+//BUTTONS END
+
+//LINES-MENU-START
+.header__line-menu-icon {
+  width: 26px;
+  height: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.4s ease-out;
+  @include respond-to(medium) {
+    display: none;
+  }
+}
+.header__line-menu-icon.open {
+  transform: rotate(-45deg);
+}
+.header__line-menu {
+  background-color: #e6e4e4;
+  border-radius: 5px;
+  width: 100%;
+  height: 3px;
+}
+.header__line-menu.half {
+  width: 80%;
+  align-self: flex-end;
+}
+.header__line-menu.start {
+  transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transform-origin: right;
+}
+.open .header__line-menu.start {
+  width: 50%;
+  align-self: flex-start;
+  transform: rotate(-90deg) translateX(3px);
+}
+.header__line-menu.end {
+  align-self: flex-end;
+  transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transform-origin: left;
+}
+.open .header__line-menu.end {
+  width: 50%;
+  align-self: flex-end;
+  transform: rotate(-90deg) translateX(-3px);
+}
+//LINES-MENU-END
+
+.header__brand {
+  width: 258px;
+  margin: 0 auto;
+  @include respond-to(small) {
+    width: 376px;
+  }
+  @include respond-to(medium) {
+    width: 100%;
+  }
+  &-name {
+    font-family: "Montserrat", sans-serif;
+    color: $white;
+    font-size: 3.428rem;
+    font-weight: 700;
+    padding-top: 43px;
+    margin-bottom: 20px;
+    @include respond-to(small) {
+      font-size: 3.858rem;
+      padding-top: 101px;
+      margin-bottom: 35px;
+    }
+    @include respond-to(medium) {
+      font-size: 5.143rem;
+      padding-top: 50px;
+      margin-bottom: 26px;
+    }
+    @include respond-to(large) {
+      font-size: 5.857rem;
+      padding-top: 60px;
+      margin-bottom: 18px;
+    }
+  }
+  &-slogan {
+    font-family: "Montserrat", sans-serif;
+    color: $deluge;
+    font-size: 1.286rem;
+    line-height: 1.385;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    @include respond-to(small) {
+      font-size:  1.429rem;
+      margin-bottom: 23px;
+    }
+    @include respond-to(medium) {
+      font-family: "Lato", sans-serif;
+      font-size: 1.714rem;
+      margin-bottom: 20px;
+      text-transform: initial;
+    }
+    @include respond-to(large) {
+      font-size:  2.143rem;
+      margin-bottom: 18px;
+    }
+  }
+  &-version {
+    font-family: "Montserrat", sans-serif;
+    color: #848e97;
+    font-size: 1rem;
+    line-height: 1.071;
+    text-transform: uppercase;
+    @include respond-to(small) {
+      font-size:  1.143rem;
+    }
+    @include respond-to(small) {
+      font-size:  1rem;
+    }
+    @include respond-to(large) {
+      font-size:  1.143rem;
+    }
+  }
+}
+.header__brand-trial-period {
+  font-family: "Montserrat", sans-serif;
+  color: #848e97;
+  font-size:  1rem;
+  position: absolute;
+  width: 290px;
+  box-sizing: border-box;
+  top: 107%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}*/

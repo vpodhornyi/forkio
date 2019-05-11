@@ -1,0 +1,29 @@
+.btn-rounded {
+  display: inline-block;
+
+  &_buy-now {
+    font-weight: $font-weight-bold;
+    @include btnRounded(1.07rem, 11px, 24px, 20px, $deluge);
+
+    @include respond-to(small) {
+      @include btnRounded(1.21rem, 14px, 30px, 24px, false);
+    }
+
+    @include respond-to(medium) {
+      @include btnRounded(1.21rem, 14px, 30px, 24px, false);
+    }
+  }
+
+  &_download {
+    font-weight: $font-weight-bold;
+    @include btnRounded(1.28rem, 15px, 30px, 25px, $deluge);
+    position: absolute;
+    bottom: -24px;
+  }
+
+  &:hover {
+    background-color: $white;
+    color: $deluge;
+  }
+}
+

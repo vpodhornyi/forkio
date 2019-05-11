@@ -1,0 +1,100 @@
+.description {
+  position: relative;
+}
+
+.container_description {
+  padding-top: 35px;
+
+  @include respond-to(small) {
+    padding-top: 45px;
+  }
+}
+
+.description {
+  background-color: $whiteSmoke;
+
+  &__title {
+    font-size: 2.28rem;
+    color: $deluge;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    padding: 0 40px;
+
+    @include respond-to(small) {
+      font-size: 3rem;
+    }
+
+    @include respond-to(large) {
+      font-size: 3.42rem;
+      position: absolute;
+      top: 60px;
+      right: 95px;
+    }
+  }
+
+  &__list {
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 35px 0;
+
+      @include respond-to(small) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+      }
+
+      @include respond-to(large) {
+        max-width: 500px;
+      }
+
+      &-info {
+        margin-top: 30px;
+
+        @include respond-to(small) {
+          margin-top: 0;
+          flex-basis: 70%;
+        }
+      }
+
+      &-title {
+        font-size: 1.14rem;
+        color: $nightRider;
+        margin-bottom: 20px;
+        text-align: center;
+
+        @include respond-to(small) {
+          text-align: left;
+        }
+      }
+
+      &-description {
+        color: $pattensBlue;
+        text-align: center;
+        line-height: 21px;
+
+        @include respond-to(small) {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &__editor {
+    max-width: 100%;
+    float: right;
+
+    @include respond-to(large) {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+.description:after {
+  content: '';
+  display: table;
+  clear: both;
+}

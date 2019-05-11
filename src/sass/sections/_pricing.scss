@@ -1,0 +1,146 @@
+.pricing {
+  background: url("../img/pricing/pricing-background.jpg") no-repeat center center;
+  background-size: cover;
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 71px;
+  padding-bottom: 93px;
+  @include respond-to(small) {
+    padding-top: 61px;
+  }
+  @include respond-to(medium) {
+    padding-top: 80px;
+  }
+  &__container {
+    width: 257px;
+    margin: 0 auto;
+    &-wide {
+      width: 288px;
+      margin: 0 auto;
+      @include respond-to(small) {
+        width: 299px;
+      }
+    }
+  }
+  &__title {
+    font-family: "Montserrat", sans-serif;
+    color: $white;
+    font-size: 1.856rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 auto;
+    width: 257px;
+    @include respond-to(small) {
+      font-size: 3rem;
+      width: 400px;
+    }
+    @include respond-to(medium) {
+      font-size: 3rem;
+      width: 100%;
+    }
+  }
+  &__tariff {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 53px;
+    @include respond-to(small) {
+      margin-top: 57px;
+    }
+    @include respond-to(large) {
+      flex-wrap: nowrap;
+      margin-top: 71px;
+    }
+    &-item {
+      font-family: "Montserrat", sans-serif;
+      color: $white;
+      background-color: rgba(255, 255, 255, 0.11);
+      position: relative;
+      height: 457px;
+      margin-bottom: 14px;
+
+      @include respond-to(medium) {
+        margin-bottom: 52px;
+      }
+      @include respond-to(large) {
+        margin-bottom: 0;
+      }
+      &.selected {
+        height: 560px;
+        background-color: rgb(64, 49, 67);
+      }
+      &-category {
+        padding: 40px 0;
+        font-size: 1.714rem;
+        background-color: rgba(255, 255, 255, 0.06);
+        text-transform: uppercase;
+        line-height: 0.625;
+        margin-bottom: 32px;
+        &.selected {
+          padding: 47px 0;
+          background-color: rgb(57, 44, 60);
+          margin-bottom: 15px;
+        }
+      }
+      &-value {
+        font-size: 4.299rem;
+        position: relative;
+        margin-bottom: 110px;
+        &.selected {
+          font-size: 5.859rem;
+          margin-bottom: 127px;
+        }
+        &::before {
+          content: "PER MONTH";
+          font-size: 1.001rem;
+          position: absolute;
+          bottom: -35px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          background-color: $deluge;
+          width: 60px;
+          height: 5px;
+          bottom: -79px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &.selected::after {
+          bottom: -86px;
+        }
+      }
+      &-description {
+        font-size: 1.144rem;
+        line-height: 2rem;
+        width: 210px;
+        margin: 0 auto;
+        position: relative;
+      }
+      &-btn{
+        font-family: "Montserrat", sans-serif;
+        color: $white;
+        font-size: 1.071rem;
+        padding: 15px 37px;
+        background-color: rgba(255, 255, 255, 0.15);
+        position: absolute;
+        bottom: 38px;
+        transform: translate(-50%);
+        text-transform: uppercase;
+        &:hover {
+          background-color: #d4ced1;
+          color: #7f6d78;
+          font-weight: 700;
+        }
+        &.selected{
+          padding: 20px 50px;
+          bottom: 47px;
+          font-size: 1.144rem;
+        }
+      }
+    }
+  }
+}

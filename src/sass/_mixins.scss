@@ -1,0 +1,53 @@
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexColumnCenter() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flexContentSpaceBetween() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin callbackData($textSize, $paddingTopBottom, $paddingLeft, $borderRadius, $with) {
+  font-size: $textSize;
+  padding: $paddingTopBottom 0 $paddingTopBottom $paddingLeft;
+  border-radius: $borderRadius;
+  width: $with;
+}
+
+@mixin btnRounded($textSize, $paddingTopBottom, $paddingLeftRight, $borderRadius, $bgColor) {
+  color: $white;
+
+  @if $textSize {
+    font-size: $textSize;
+  }
+
+  @if $paddingTopBottom and $paddingLeftRight {
+    padding: $paddingTopBottom $paddingLeftRight;
+  }
+
+  @if $bgColor {
+    border: 1px solid $bgColor;
+    background-color: $bgColor;
+  }
+  border-radius: $borderRadius;
+}
